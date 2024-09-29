@@ -4,14 +4,15 @@
 apt-get update && apt-get install u-boot-tools -y
 ```
 
-### Make script
+### Make scripts
 
 ```sh
-mkimage -A arm -O linux -T script -C none -d aml_autoscript.txt aml_autoscript
-```
+## Clean previous scripts
+make clean
 
-or
+## Make init script for s9xx tv boxes
+make s905_init_aml_autoscript
 
-```sh
-mkimage -A arm -O linux -T script -C none -d s905_autoscript.txt s905_autoscript
+## Make boot Armbian script for s9xx tv boxes
+make boot_s9xx_armbian_mmc
 ```

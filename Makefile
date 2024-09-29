@@ -20,15 +20,6 @@ create_archive: \
 	zip -RE -jX $(BUILD_DIR)/aml_autoscript.zip \
 		$(BUILD_DIR)/aml_autoscript
 
-#build: \
-		#$(DIRS)
-	#mkimage -A arm -O linux -T script -C none -d script/$(SRC_SCRIPT).txt $(BUILD_DIR)/$(SRC_SCRIPT)
-
-#create_archive:
-	#zip -jX $(BUILD_DIR)/$(SRC_SCRIPT).zip \
-		#script/$(SRC_SCRIPT).txt \
-		#$(BUILD_DIR)/$(SRC_SCRIPT)
-
 $(DIRS):
 	mkdir -p $@
 
