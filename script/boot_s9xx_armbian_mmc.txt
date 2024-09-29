@@ -16,7 +16,7 @@ fatload ${devtype} ${devnum}:${distro_bootpart} ${kernel_loadaddr} /uImage
 echo "Loading initrd...";
 fatload ${devtype} ${devnum}:${distro_bootpart} ${initrd_loadaddr} /uInitrd
 setenv condev 'console=ttyS0,115200 console=tty0 no_console_suspend consoleblank=0'
-setenv bootargs_armbian 'root=LABEL=ARCH rootflags=data=writeback rw ${condev} fsck.repair=yes net.ifnames=0 mac=${mac} debug noquiet nosplash'
+setenv bootargs_armbian 'root=LABEL=ARMBIAN rootflags=data=writeback rw ${condev} fsck.repair=yes net.ifnames=0 mac=${mac} debug noquiet nosplash'
 setenv boot_armbian 'bootm ${kernel_loadaddr} ${initrd_loadaddr} ${dtb_mem_addr}'
 setenv bootargs ${bootargs_armbian};
 echo "bootargs=${bootargs}"
@@ -27,7 +27,7 @@ run boot_armbian
 # mkimage -C none -A arm -T script -d aml_autoscript.cmd aml_autoscript
 #
 ## Linux partition
-# mkfs.ext4 -O ^metadata_csum,^64bit -L ARCH /dev/mmcblk0p2
+# mkfs.ext4 -O ^metadata_csum,^64bit -L ARMBIAN /dev/mmcblk0p2
 #
 ## Convert Image - Image: Linux kernel ARM64 boot executable Image, little-endian, 4K pages
 ## to ./uImage: u-boot legacy uImage, Linux kernel, Linux/ARM 64-bit, OS Kernel Image (Not compressed), 27431424 bytes, Sun Sep 29 12:30:16 2024, Load Address: 0X1080000, Entry Point: 0X1080000, Header CRC: 0X97FCD709, Data CRC: 0X22208665
