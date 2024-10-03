@@ -1,4 +1,4 @@
-SRC_SCRIPT=s905_init_aml_autoscript
+SRC_SCRIPT?=s905_init_aml_autoscript
 BUILD_DIR=builds
 DIRS=$(BUILD_DIR)
 IMAGES=$(BUILD_DIR)/aml_autoscript $(BUILD_DIR)/emmc_autoscript $(BUILD_DIR)/s905_autoscript
