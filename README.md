@@ -1,7 +1,7 @@
 ### Install dependencies
 
 ```sh
-apt-get update && apt-get install u-boot-tools -y
+apt-get update && apt-get install u-boot-tools zip -y
 ```
 
 ### Make scripts
